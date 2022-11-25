@@ -1,8 +1,6 @@
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-
 const Header = () => {
   return (
-    <header className="absolute w-full right-0">
+    <header className="w-full right-0">
       <nav className="h-20 py-2 px-6 max-w-screen-xl flex justify-end m-auto">
         <ul className="flex">
           <li className="flex">
