@@ -12,7 +12,7 @@ const Introduction = () => {
           </p>
         </div>
         <h1 className="tracking-in-contract tracking-tighter leading-3-5 md:leading-5-5 text-5xl md:text-5 font-bold text-gray-900">
-          Hi, I am Javi
+          I am ready to face new challenges
         </h1>
         <a href="#content">
           <button className="text-sm font-bold tracking-widest uppercase text-white py-5 px-8 rounded-full focus:outline-none transition duration-150 ease-in-out mt-12 bg-zinc-900">
