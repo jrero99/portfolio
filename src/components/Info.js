@@ -18,7 +18,7 @@ const Info = () => {
   };
 
   return (
-    <section id="content" className="bg-green-900 h-screen">
+    <section id="content" className="bg-blue-900 h-screen">
       <ul className="flex justify-center">
         <li
           className="cursor-pointer text-sm font-bold tracking-widest uppercase hover:text-white text-white p-4 md:py-6 md:px-8 transition duration-150 ease-in-out text-blue"
@@ -44,7 +44,7 @@ const Info = () => {
       </ul>
       <div className="flex flex-col py-10">
         {currentView == 0 && (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-green-800">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-blue-800">
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
                 Artero{" "}
@@ -52,7 +52,7 @@ const Info = () => {
                   9 months
                 </span>
               </div>
-              <ul className="text-black text-base">
+              <ul className="text-base text-white">
                 <li>Created a study platform for the Artero Academy.</li>
                 <li>
                   Developed new features such as scissor finder, a bulletin
@@ -110,7 +110,7 @@ const Info = () => {
           </div>
         )}
         {currentView == 1 && (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-green-800">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-blue-800">
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">Squirdle</div>
               <ul className="text-black text-base">
@@ -150,15 +150,21 @@ const Info = () => {
           </div>
         )}
         {currentView == 2 && (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-green-800">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-blue-800">
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
                 Hi, I am Javier Redondo
               </div>
               <ul className="text-white text-base">
                 <li>
-                  I am a full-stack web developer who focuses on writting clean,
-                  elegant and efficient code.
+                  I am a junior programmer recently graduated
+                  in Web Application Development and Network Systems
+                  Administration. I am a person passionate about the programming
+                  sector with a lot of desire to learn and increase my frontiers
+                  to be a better developer. I love teamwork and encourage a good
+                  working environment with the whole team. Willing to contribute
+                  my knowledge of systems, development and teamwork to improve
+                  in all aspects!
                 </li>
               </ul>
             </div>
