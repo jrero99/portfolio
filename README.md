@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+
+# Squirdle Clon
+
+Created a game based on Squirdle. The main objective is to find the Pokémon based on the clues the App gives you.
+
+
+## Authors
+
+- [@jrero99](https://www.github.com/jrero99)
+
+
+## Deployment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +79,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
