@@ -1,7 +1,7 @@
 
-# Squirdle Clon
+# My portfolio
 
-Created a game based on Squirdle. The main objective is to find the Pokémon based on the clues the App gives you.
+I am a junior programmer recently graduated in Web Application Development and Network Systems Administration. I am a person passionate about the programming sector with a lot of desire to learn and increase my frontiers to be a better developer. I love teamwork and encourage a good working environment with the whole team. Willing to contribute my knowledge of systems, development and teamwork to improve in all aspects!
 
 
 ## Authors
