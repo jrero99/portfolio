@@ -14,6 +14,10 @@ const experienceMeta = {
 };
 
 const projectMeta = {
+  plato: {
+    name: "Centre d'estudis Plató",
+    stack: ["TypeScript", "React", "Vite", "Tailwind", "Node.js", "Express", "PostgreSQL", "Prisma", "Zod", "Vitest", "Cypress", "Neon", "Docker", "GCP", "Firebase"],
+  },
   lcn: {
     name: "La Casa Nostra",
     links: [
@@ -27,6 +31,11 @@ const projectMeta = {
     stack: ["Next.js", "TypeScript", "Tailwind", "Leaflet", "Python", "Django", "PostgreSQL", "Redis", "Celery", "MQTT", "Docker", "GitHub Actions", "Nginx", "Hetzner"],
   },
   atd: { name: "ATD", stack: ["Claude", "Git"] },
+  cinemabi: {
+    name: "Cinema BI",
+    links: [{ id: "repo", href: "https://github.com/jrero99/tfg-cinema-bi", Icon: GitHubIcon }],
+    stack: ["Python", "pandas", "BigQuery", "GCP", "Node.js", "Express", "React", "Vite", "Tailwind"],
+  },
 };
 
 const tabs = ["experience", "projects", "about"];

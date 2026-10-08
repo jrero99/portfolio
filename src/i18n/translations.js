@@ -94,6 +94,35 @@ const translations = {
       ],
       projects: [
         {
+          id: "plato",
+          type: "Academy management SaaS",
+          badge: "In production",
+          summary:
+            "Multi-tenant SaaS that runs the day-to-day of Centre d'estudis Plató, a tutoring academy with several centers: students and families, classes and timetables, teacher time tracking, billing and accounting. Built white-label from day one so it can be offered to other academies.",
+          highlights: [
+            {
+              title: "Multi-tenant architecture",
+              text: "Each academy or center is a tenant with isolated data, its own branding (logo and colors applied as CSS variables) and its own set of enabled modules, enforced by Express middleware. Access is role-based and scoped to each user's center.",
+            },
+            {
+              title: "Billing & SEPA",
+              text: "Monthly receipt generation, SEPA direct-debit remittances exported for the bank, PDF receipts emailed to families and a financial control view across bank, cash and totals.",
+            },
+            {
+              title: "Scheduling & payroll",
+              text: "Calendar with weekly recurrence and conflict detection, attendance tracking, and per-class teacher clock-in that feeds payroll by class type (hours × hourly rate).",
+            },
+            {
+              title: "Enrollment & communications",
+              text: "Public tokenized enrollment form that produces a PDF, editable SEPA mandates and bulk email to families with a rich-text editor, in Catalan and Spanish.",
+            },
+            {
+              title: "Stack & deployment",
+              text: "TypeScript monorepo with Zod schemas shared between React 19 and Node.js/Express, Prisma on PostgreSQL (Neon), JWT in httpOnly cookies, Vitest and Cypress; API on Cloud Run and frontend on Firebase Hosting.",
+            },
+          ],
+        },
+        {
           id: "lcn",
           type: "Website & ordering platform",
           badge: "In progress",
@@ -155,6 +184,26 @@ const translations = {
             { title: "Git", text: "Version control with Git and collaborative workflows for the development team." },
             { title: "Environments", text: "Setup and organization of the team's different development environments." },
           ],
+        },
+        {
+          id: "cinemabi",
+          type: "Business intelligence platform",
+          badge: "Degree project",
+          summary:
+            "My final degree project in Computer Engineering (UOC): a business intelligence platform for a cinema chain that brings box office, concessions and loyalty-program data together, covering the whole data lifecycle from generation to an interactive dashboard.",
+          highlights: [
+            {
+              title: "Synthetic data",
+              text: "Python scripts (Faker, pandas) generate a coherent relational dataset covering 12 months of operations (cinemas, screens, films, sessions, members and concession sales) with realistic patterns such as occupancy by weekday and member behavior.",
+            },
+            { title: "Data warehouse", text: "Star-schema dimensional model in Google BigQuery, loaded through a Python ETL script." },
+            { title: "API", text: "Node.js/Express REST API that queries BigQuery and serves the KPIs to the frontend." },
+            {
+              title: "Dashboard",
+              text: "React SPA with Recharts: KPIs, box office and occupancy trends, a showtime heatmap, profitability by format, member segmentation, concession cross-selling and a film comparator.",
+            },
+          ],
+          links: { repo: "Repository" },
         },
       ],
       about: {
@@ -305,6 +354,35 @@ const translations = {
       ],
       projects: [
         {
+          id: "plato",
+          type: "SaaS de gestión para academias",
+          badge: "En producción",
+          summary:
+            "SaaS multi-tenant que gestiona el día a día de Centre d'estudis Plató, una academia de repaso con varias sedes: alumnos y familias, clases y horarios, fichaje del profesorado, facturación y contabilidad. Diseñado como marca blanca desde el primer día para poder ofrecerlo a otras academias.",
+          highlights: [
+            {
+              title: "Arquitectura multi-tenant",
+              text: "Cada academia o sede es un tenant con sus datos aislados, su propia imagen (logo y colores aplicados como variables CSS) y sus módulos activos, controlados con middleware de Express. Los permisos van por rol y se limitan a la sede de cada usuario.",
+            },
+            {
+              title: "Facturación y SEPA",
+              text: "Generación mensual de recibos, remesas de domiciliación SEPA exportadas para el banco, recibos en PDF enviados por email a las familias y una vista de control financiero de banco, caja y total.",
+            },
+            {
+              title: "Horarios y nóminas",
+              text: "Calendario con recurrencia semanal y detección de conflictos, control de asistencia y fichaje del profesorado por clase que alimenta la nómina por tipo de clase (horas × tarifa).",
+            },
+            {
+              title: "Matrícula y comunicaciones",
+              text: "Formulario de inscripción público con enlace tokenizado que genera un PDF, mandatos SEPA editables y envío masivo de correos a las familias con editor de texto enriquecido, en catalán y castellano.",
+            },
+            {
+              title: "Stack y despliegue",
+              text: "Monorepo en TypeScript con esquemas Zod compartidos entre React 19 y Node.js/Express, Prisma sobre PostgreSQL (Neon), JWT en cookies httpOnly, Vitest y Cypress; API en Cloud Run y frontend en Firebase Hosting.",
+            },
+          ],
+        },
+        {
           id: "lcn",
           type: "Web y plataforma de pedidos",
           badge: "En desarrollo",
@@ -366,6 +444,26 @@ const translations = {
             { title: "Git", text: "Control de versiones con Git y flujos de trabajo colaborativos para el equipo de desarrollo." },
             { title: "Entornos", text: "Configuración y organización de los distintos entornos de desarrollo del equipo." },
           ],
+        },
+        {
+          id: "cinemabi",
+          type: "Plataforma de Business Intelligence",
+          badge: "TFG",
+          summary:
+            "Mi Trabajo de Fin de Grado en Ingeniería Informática (UOC): una plataforma de Business Intelligence para una cadena de cines que unifica los datos de taquilla, bar y programa de fidelización, cubriendo todo el ciclo de vida del dato, desde su generación hasta un cuadro de mando interactivo.",
+          highlights: [
+            {
+              title: "Datos sintéticos",
+              text: "Scripts en Python (Faker, pandas) que generan un conjunto de datos relacional coherente con 12 meses de operativa (cines, salas, películas, sesiones, socios y ventas del bar) y patrones realistas como la ocupación según el día de la semana o el comportamiento de los socios.",
+            },
+            { title: "Data warehouse", text: "Modelo dimensional en estrella en Google BigQuery, cargado mediante un script ETL en Python." },
+            { title: "API", text: "API REST en Node.js/Express que consulta BigQuery y sirve los KPIs al frontend." },
+            {
+              title: "Cuadro de mando",
+              text: "SPA en React con Recharts: KPIs, evolución de taquilla y ocupación, mapa de calor por horario, rentabilidad por formato, segmentación de socios, venta cruzada en el bar y un comparador de películas.",
+            },
+          ],
+          links: { repo: "Repositorio" },
         },
       ],
       about: {

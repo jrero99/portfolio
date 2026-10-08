@@ -1,6 +1,7 @@
 import {
   siCelery,
   siClaude,
+  siCypress,
   siDjango,
   siDocker,
   siExpress,
@@ -17,9 +18,11 @@ import {
   siModelcontextprotocol,
   siMqtt,
   siMysql,
+  siNeon,
   siNextdotjs,
   siNginx,
   siNodedotjs,
+  siPandas,
   siPhp,
   siPostgresql,
   siPrisma,
@@ -77,6 +80,9 @@ const techIcons = {
   Nginx: siNginx,
   Hetzner: siHetzner,
   Git: siGit,
+  Cypress: siCypress,
+  Neon: siNeon,
+  pandas: siPandas,
 };
 
 export const getTechIcon = (name) => techIcons[name];
