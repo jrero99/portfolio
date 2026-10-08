@@ -1,17 +1,39 @@
+import { GitHubIcon, LinkedInIcon } from "./Icons";
+import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+
+const links = [
+  { label: "GitHub", href: "https://github.com/jrero99", Icon: GitHubIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/redondorodriguezjavier/", Icon: LinkedInIcon },
+];
+
 const Header = () => {
   return (
-    <header className="w-full right-0">
-      <nav className="h-20 py-2 px-6 max-w-7xl flex justify-end m-auto">
-        <ul className="flex">
-          <li className="flex ">
-            <a className="flex text-gray-900 p-4 font-semibold text-base cursor-pointer" href="https://github.com/jrero99" target="_blank">
-              github.
-            </a>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-900/5 bg-zinc-50/75 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/75">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <a href="#top" className="font-display text-base font-bold tracking-tight whitespace-nowrap text-zinc-900 sm:text-lg dark:text-white">
+          Javier Redondo<span className="text-accent">.</span>
+        </a>
+        <ul className="flex items-center sm:gap-1">
+          {links.map(({ label, href, Icon }) => (
+            <li key={label}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full text-sm sm:px-3 font-medium text-zinc-600 transition-colors duration-200 hover:bg-zinc-900/5 hover:text-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-white"
+              >
+                <Icon className="size-5" />
+                <span className="hidden sm:inline">{label}</span>
+              </a>
+            </li>
+          ))}
+          <li>
+            <LanguageToggle />
           </li>
-          <li className="flex">
-            <a className="flex text-gray-900 p-4 font-semibold text-base cursor-pointer" href="https://www.linkedin.com/in/redondorodriguezjavier/" target="_blank">
-              linkedin.
-            </a>
+          <li>
+            <ThemeToggle />
           </li>
         </ul>
       </nav>

@@ -29,7 +29,8 @@ Eres **frontend-react**, el agente especialista en el frontend del portfolio per
 5. **Accesibilidad por defecto:** HTML semántico (`header`, `nav`, `main`, `section`, `footer`), un solo `h1`, jerarquía de encabezados correcta, `alt` en imágenes, `aria-label` en botones de solo icono, foco visible, contraste de al menos 4.5:1 y navegación por teclado. Los enlaces externos llevan `target="_blank" rel="noopener noreferrer"`.
 6. **Animación con mesura:** usa `transform` y `opacity` con 150-300 ms en microinteracciones, y respeta `prefers-reduced-motion` (`motion-safe:` / `motion-reduce:`).
 7. **Rendimiento:** imágenes optimizadas (WebP/AVIF, `loading="lazy"` y `width`/`height` para evitar saltos de layout), sin dependencias innecesarias.
-8. **Diseño:** para decisiones visuales (paleta, tipografía, estilo, patrones de sección) consulta la skill `ui-ux-pro-max` y aplica su checklist de pre-entrega.
+8. **Estilo minimalista (preferencia del autor).** Fondos lisos, sin halos, degradados de color, patrones decorativos ni sombras marcadas. Paleta en escala de grises (zinc/slate) con el azul solo como acento puntual. Animaciones pequeñas y sutiles.
+9. **Diseño:** para decisiones visuales (paleta, tipografía, estilo, patrones de sección) consulta la skill `ui-ux-pro-max` y aplica su checklist de pre-entrega.
 
 ## Verificación
 

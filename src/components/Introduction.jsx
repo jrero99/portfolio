@@ -1,26 +1,51 @@
+import { ArrowDownIcon, LinkedInIcon } from "./Icons";
+import { useLanguage } from "../i18n/LanguageContext";
+
 const Introduction = () => {
+  const { t } = useLanguage();
   return (
-    <section className="h-screen flex items-center px-3">
-      <div className="max-w-2xl m-auto text-center">
-        <div className="flex flex-col md:flex-row md:justify-center">
-          <p className="text-xs font-medium tracking-widest md:mb-10 text-gray-900 flex items-center justify-center">
-            FULL STACK DEVELOPER&nbsp;
-          </p>
-          <p className="text-xs font-medium tracking-widest mb-10 text-gray-900 flex items-center justify-center">
-            <span className="font-light">|</span>
-            &nbsp;BARCELONA
-          </p>
-        </div>
-        <h1 className="tracking-in-contract tracking-tighter leading-3-5 md:leading-5-5 text-5xl md:text-5 font-bold text-gray-900">
-          I am ready to face new challenges
+    <section id="top" className="flex min-h-svh items-center px-6 pt-16">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="inline-flex items-center gap-2.5 text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400 motion-safe:animate-fade-up">
+          <span className="relative flex size-2">
+            <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
+            <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+          </span>
+          {t.intro.role}
+          <span className="text-zinc-300 dark:text-zinc-700" aria-hidden="true">|</span>
+          Barcelona
+        </p>
+
+        <h1 className="mt-8 font-display text-5xl font-bold tracking-tight text-balance text-zinc-900 dark:text-white motion-safe:animate-fade-up motion-safe:[animation-delay:120ms] sm:text-6xl md:text-7xl">
+          {t.intro.titleStart}{" "}
+          <span className="text-zinc-500 dark:text-zinc-400">{t.intro.titleHighlight}</span>
         </h1>
-        <a href="#content">
-          <button className="text-sm font-bold tracking-widest uppercase text-white py-5 px-8 rounded-full focus:outline-hidden cursor-pointer transition duration-150 ease-in-out mt-12 bg-zinc-900">
-            explore works
-          </button>
-        </a>
+
+        <p className="mx-auto mt-6 max-w-xl text-lg text-pretty text-zinc-600 dark:text-zinc-400 motion-safe:animate-fade-up motion-safe:[animation-delay:240ms]">
+          {t.intro.summary}
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 motion-safe:animate-fade-up motion-safe:[animation-delay:360ms] sm:flex-row">
+          <a
+            href="#content"
+            className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-zinc-900 px-7 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            {t.intro.explore}
+            <ArrowDownIcon className="size-4 transition-transform duration-200 group-hover:translate-y-0.5" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/redondorodriguezjavier/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 items-center gap-2 rounded-full border border-zinc-900/10 bg-white px-7 text-sm font-semibold tracking-wide text-zinc-900 transition-colors duration-200 hover:border-zinc-900/20 hover:bg-zinc-100 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/20 dark:hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            <LinkedInIcon className="size-4 text-[#0A66C2] dark:text-white" />
+            {t.intro.contact}
+          </a>
+        </div>
       </div>
     </section>
   );
 };
-export default Introduction
+
+export default Introduction;

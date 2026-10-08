@@ -1,177 +1,234 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { ArrowUpRightIcon, GitHubIcon } from "./Icons";
+import { useLanguage } from "../i18n/LanguageContext";
+
+const experienceMeta = {
+  cedetec: {
+    company: "CedetecGroup",
+    stack: ["Node.js", "Express", "React", "Redux", "TanStack Query", "Stripe", "BigQuery", "Fivetran", "GCP", "Docker", "Cloud Build"],
+  },
+  optima: { company: "Optima Retail", stack: ["React", "Laravel", "MySQL", "Sass"] },
+  artero: { company: "Artero", stack: ["PHP", "jQuery", "Magento", "SAP"] },
+};
+
+const projectMeta = {
+  squirdle: {
+    name: "Squirdle",
+    links: [
+      { id: "play", href: "https://jrero99.github.io/pokeguesserr/", Icon: ArrowUpRightIcon },
+      { id: "repo", href: "https://github.com/jrero99/pokeguesserr", Icon: GitHubIcon },
+    ],
+    stack: ["React", "PokeAPIv2", "Tailwind"],
+  },
+};
+
+const tabs = ["experience", "portfolio", "about"];
+
+const Card = ({ children }) => (
+  <article className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.07] hover:ring-white/20 md:p-8">
+    {children}
+  </article>
+);
+
+const Tags = ({ items, label }) => (
+  <ul className="mt-6 flex flex-wrap gap-2" aria-label={label}>
+    {items.map((item) => (
+      <li key={item} className="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 ring-1 ring-white/10">
+        {item}
+      </li>
+    ))}
+  </ul>
+);
+
+const Period = ({ children }) => (
+  <span className="shrink-0 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-200">{children}</span>
+);
+
+const Block = ({ title, children }) => (
+  <section className="mt-8 border-t border-white/10 pt-6">
+    <h4 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">{title}</h4>
+    <div className="mt-4">{children}</div>
+  </section>
+);
+
+const Experience = () => {
+  const { t } = useLanguage();
+  return t.info.experiences.map(({ id, role, period, summary, highlights }) => {
+    const { company, stack } = experienceMeta[id];
+    return (
+      <Card key={id}>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h3 className="font-display text-2xl font-semibold text-white">{company}</h3>
+            <p className="mt-1 text-sm text-slate-400">{role}</p>
+          </div>
+          <Period>{period}</Period>
+        </div>
+        {summary && <p className="mt-5 text-slate-300">{summary}</p>}
+        <ul className="mt-5 space-y-3 text-slate-300">
+          {highlights.map(({ title, text }) => (
+            <li key={text} className="flex gap-3">
+              <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-blue-400" aria-hidden="true" />
+              <span>
+                {title && <strong className="font-semibold text-white">{title}: </strong>}
+                {text}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <Tags items={stack} label={t.info.stack} />
+      </Card>
+    );
+  });
+};
+
+const Portfolio = () => {
+  const { t } = useLanguage();
+  return t.info.projects.map(({ id, description, links: linkLabels }) => {
+    const { name, links, stack } = projectMeta[id];
+    return (
+      <Card key={id}>
+        <h3 className="font-display text-2xl font-semibold text-white">{name}</h3>
+        <p className="mt-4 text-slate-300">{description}</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {links.map(({ id: linkId, href, Icon }) => (
+            <a
+              key={linkId}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+            >
+              {linkLabels[linkId]}
+              <Icon className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          ))}
+        </div>
+        <Tags items={stack} label={t.info.stack} />
+      </Card>
+    );
+  });
+};
+
+const Entries = ({ items }) => (
+  <ul className="space-y-4">
+    {items.map(({ title, school, period, description }) => (
+      <li key={title}>
+        <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+          <p className="font-semibold text-white">{title}</p>
+          <p className="text-sm text-slate-400">{period}</p>
+        </div>
+        <p className="text-sm text-slate-400">{school}</p>
+        {description && <p className="mt-2 text-sm leading-relaxed text-slate-300">{description}</p>}
+      </li>
+    ))}
+  </ul>
+);
+
+const About = () => {
+  const { t } = useLanguage();
+  const { title, body, blocks, skills, education, certifications, languages } = t.info.about;
+  return (
+    <Card>
+      <h3 className="font-display text-2xl font-semibold text-white">{title}</h3>
+      <p className="mt-4 leading-relaxed text-slate-300">{body}</p>
+
+      <Block title={blocks.skills}>
+        <dl className="space-y-4">
+          {skills.map(({ area, items }) => (
+            <div key={area}>
+              <dt className="font-semibold text-white">{area}</dt>
+              <dd className="mt-1 text-sm leading-relaxed text-slate-300">{items}</dd>
+            </div>
+          ))}
+        </dl>
+      </Block>
+
+      <Block title={blocks.education}>
+        <Entries items={education} />
+      </Block>
+
+      <Block title={blocks.certifications}>
+        <Entries items={certifications} />
+      </Block>
+
+      <Block title={blocks.languages}>
+        <ul className="flex flex-wrap gap-x-8 gap-y-2">
+          {languages.map(({ name, level }) => (
+            <li key={name} className="text-slate-300">
+              <span className="font-semibold text-white">{name}</span> · {level}
+            </li>
+          ))}
+        </ul>
+      </Block>
+    </Card>
+  );
+};
+
+const panels = { experience: Experience, portfolio: Portfolio, about: About };
+
 const Info = () => {
-  const [currentView, setCurrentView] = useState(0);
-  const handleOnClick = (e) => {
-    switch (e.target.value) {
-      case 0:
-        setCurrentView(0);
-        break;
-      case 1:
-        setCurrentView(1);
-        break;
-      case 2:
-        setCurrentView(2);
-        break;
-      default:
-        setCurrentView(0);
-    }
+  const { t } = useLanguage();
+  const [active, setActive] = useState(tabs[0]);
+  const tabRefs = useRef([]);
+
+  const handleKeyDown = (e, index) => {
+    const offset = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+    if (!offset) return;
+    const next = (index + offset + tabs.length) % tabs.length;
+    setActive(tabs[next]);
+    tabRefs.current[next].focus();
   };
 
+  const Panel = panels[active];
+
   return (
-    <section id="content" className="bg-blue-900 h-screen">
-      <ul className="flex justify-center">
-        <li
-          className="cursor-pointer text-sm font-bold tracking-widest uppercase hover:text-white text-white p-4 md:py-6 md:px-8 transition duration-150 ease-in-out text-blue"
-          onClick={handleOnClick}
-          value="0"
-        >
-          Experiences
-        </li>
-        <li
-          className="cursor-pointer text-sm font-bold tracking-widest uppercase hover:text-white text-white p-4 md:py-6 md:px-8 transition duration-150 ease-in-out"
-          onClick={handleOnClick}
-          value="1"
-        >
-          Portfolio
-        </li>
-        <li
-          className="cursor-pointer text-sm font-bold tracking-widest uppercase hover:text-white text-white p-4 md:py-6 md:px-8 transition duration-150 ease-in-out"
-          onClick={handleOnClick}
-          value="2"
-        >
-          About me
-        </li>
-      </ul>
-      <div className="flex flex-col py-10">
-        {currentView == 0 && (
-          <div className="max-w-sm rounded-sm overflow-hidden shadow-lg m-auto bg-blue-800">
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">
-                Artero{" "}
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                  9 months
-                </span>
-              </div>
-              <ul className="text-base text-white">
-                <li>Created a study platform for the Artero Academy.</li>
-                <li>
-                  Developed new features such as scissor finder, a bulletin
-                  board for lost dogs, etc.
-                </li>
-                <li>
-                  Installed Magento for the spanish site and migrated all the
-                  data from the old site.
-                </li>
-                <li>
-                  Synchronized stocks and orders sent from SAP with Magento.
-                </li>
-                <li>
-                  Automated the availability status of the products according to
-                  the last date and the notification to all the people in
-                  charge.
-                </li>
-              </ul>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Php
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                jQuery
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Laravel
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Bootstrap
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Magento
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Git
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Docker
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Linux
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                MySQL
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Magento
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Jira
-              </span>
-            </div>
+    <section id="content" className="scroll-mt-16 bg-slate-950 px-6 dark:border-t dark:border-white/10 py-24 md:py-32">
+      <div className="mx-auto max-w-2xl">
+        <p className="text-center text-xs font-semibold tracking-widest text-blue-400 uppercase">{t.info.eyebrow}</p>
+        <h2 className="mt-3 text-center font-display text-3xl font-bold tracking-tight text-balance text-white md:text-4xl">
+          {t.info.title}
+        </h2>
+
+        <div className="mt-10 flex justify-center">
+          <div role="tablist" aria-label={t.info.tablist} className="inline-flex rounded-full bg-white/5 p-1 ring-1 ring-white/10">
+            {tabs.map((id, index) => {
+              const selected = active === id;
+              return (
+                <button
+                  key={id}
+                  ref={(el) => (tabRefs.current[index] = el)}
+                  id={`tab-${id}`}
+                  role="tab"
+                  type="button"
+                  aria-selected={selected}
+                  aria-controls={`panel-${id}`}
+                  tabIndex={selected ? 0 : -1}
+                  onClick={() => setActive(id)}
+                  onKeyDown={(e) => handleKeyDown(e, index)}
+                  className={`min-h-11 cursor-pointer rounded-full px-4 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 sm:px-6 ${
+                    selected ? "bg-white text-slate-950 shadow" : "text-slate-300 hover:text-white"
+                  }`}
+                >
+                  {t.info.tabs[id]}
+                </button>
+              );
+            })}
           </div>
-        )}
-        {currentView == 1 && (
-          <div className="max-w-sm rounded-sm overflow-hidden shadow-lg m-auto bg-blue-800">
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Squirdle</div>
-              <ul className="text-black text-base">
-                <li className="text-white">
-                  Created a game based on Squirdle. The main objective is to
-                  find the Pokémon based on the clues the App gives you.
-                </li>
-                <li className="font-bold">
-                  <a
-                    href="https://jrero99.github.io/pokeguesserr/"
-                    target="_blank"
-                  >
-                    Game
-                  </a>
-                </li>
-                <li className="font-bold">
-                  <a
-                    href="https://github.com/jrero99/pokeguesserr"
-                    target="_blank"
-                  >
-                    Repository
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                React
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                PokeAPIv2
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                Tailwind
-              </span>
-            </div>
-          </div>
-        )}
-        {currentView == 2 && (
-          <div className="max-w-sm rounded-sm overflow-hidden shadow-lg m-auto bg-blue-800">
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">
-                Hi, I am Javier Redondo
-              </div>
-              <ul className="text-white text-base">
-                <li>
-                  I am a junior programmer recently graduated
-                  in Web Application Development and Network Systems
-                  Administration. I am a person passionate about the programming
-                  sector with a lot of desire to learn and increase my frontiers
-                  to be a better developer. I love teamwork and encourage a good
-                  working environment with the whole team. Willing to contribute
-                  my knowledge of systems, development and teamwork to improve
-                  in all aspects!
-                </li>
-              </ul>
-            </div>
-          </div>
-        )}
+        </div>
+
+        <div
+          key={active}
+          id={`panel-${active}`}
+          role="tabpanel"
+          aria-labelledby={`tab-${active}`}
+          className="mt-12 space-y-6 motion-safe:animate-fade-in"
+        >
+          <Panel />
+        </div>
       </div>
     </section>
   );
 };
+
 export default Info;

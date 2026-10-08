@@ -478,6 +478,8 @@ This project is a personal developer portfolio (React 19 + Vite + Tailwind CSS v
 
 Whenever this file asks you to provide CSS or code, give it as Tailwind CSS v4 utility classes on the JSX (e.g. `justify-start` instead of `justify-content: flex-start`), mobile-first with `sm:`/`md:`/`lg:`/`xl:` prefixes. Design tokens (colors, fonts, spacing) go in the `@theme` block of `src/Index.css`, not in `tailwind.config.js` (it does not exist in v4). Use plain CSS only for what Tailwind cannot express.
 
+The author wants this portfolio to stay **minimalist**: plain backgrounds (no glows, color gradients, decorative patterns or heavy shadows), a grayscale zinc/slate palette with blue only as a sparse accent, and small, subtle animations. Distinctiveness must come from typography, spacing and hierarchy, not from decoration. Do not propose changes that break this.
+
 End every response with this block, exactly:
 
 ```
