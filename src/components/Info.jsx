@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { ArrowUpRightIcon, GitHubIcon } from "./Icons";
 import { TechIcon, getTechIcon } from "./TechIcons";
 import { useLanguage } from "../i18n/LanguageContext";
 
@@ -11,7 +12,23 @@ const experienceMeta = {
   artero: { company: "Artero", stack: ["PHP", "jQuery", "SAP"] },
 };
 
-const tabs = ["experience", "about"];
+const projectMeta = {
+  lcn: {
+    name: "La Casa Nostra",
+    links: [
+      { id: "site", href: "https://lacasanostra.web.app", Icon: ArrowUpRightIcon },
+      { id: "repo", href: "https://github.com/jrero99/lcn", Icon: GitHubIcon },
+    ],
+    stack: ["React", "Vite", "Node.js", "Express", "PostgreSQL", "Prisma", "Zod", "Vitest", "Jest", "Firebase", "Claude"],
+  },
+  aquaflow: {
+    name: "AquaFlow",
+    stack: ["Next.js", "TypeScript", "Tailwind", "Leaflet", "Python", "Django", "PostgreSQL", "Redis", "Celery", "MQTT", "Docker", "GitHub Actions", "Nginx", "Hetzner"],
+  },
+  atd: { name: "ATD", stack: ["Claude", "Git"] },
+};
+
+const tabs = ["experience", "projects", "about"];
 
 const Card = ({ children }) => (
   <article className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.07] hover:ring-white/20 md:p-8">
@@ -54,6 +71,20 @@ const Block = ({ title, children }) => (
   </section>
 );
 
+const Highlights = ({ items }) => (
+  <ul className="mt-5 space-y-3 text-slate-300">
+    {items.map(({ title, text }) => (
+      <li key={text} className="flex gap-3">
+        <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-blue-400" aria-hidden="true" />
+        <span>
+          {title && <strong className="font-semibold text-white">{title}: </strong>}
+          {text}
+        </span>
+      </li>
+    ))}
+  </ul>
+);
+
 const Experience = () => {
   const { t } = useLanguage();
   return t.info.experiences.map(({ id, role, period, summary, highlights }) => {
@@ -68,17 +99,44 @@ const Experience = () => {
           <Period>{period}</Period>
         </div>
         {summary && <p className="mt-5 text-slate-300">{summary}</p>}
-        <ul className="mt-5 space-y-3 text-slate-300">
-          {highlights.map(({ title, text }) => (
-            <li key={text} className="flex gap-3">
-              <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-blue-400" aria-hidden="true" />
-              <span>
-                {title && <strong className="font-semibold text-white">{title}: </strong>}
-                {text}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <Highlights items={highlights} />
+        <Tags items={stack} label={t.info.stack} />
+      </Card>
+    );
+  });
+};
+
+const Projects = () => {
+  const { t } = useLanguage();
+  return t.info.projects.map(({ id, type, badge, summary, highlights, links: linkLabels }) => {
+    const { name, links = [], stack } = projectMeta[id];
+    return (
+      <Card key={id}>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h3 className="font-display text-2xl font-semibold text-white">{name}</h3>
+            <p className="mt-1 text-sm text-slate-400">{type}</p>
+          </div>
+          <Period>{badge}</Period>
+        </div>
+        <p className="mt-5 text-slate-300">{summary}</p>
+        <Highlights items={highlights} />
+        {links.length > 0 && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {links.map(({ id: linkId, href, Icon }) => (
+              <a
+                key={linkId}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              >
+                {linkLabels[linkId]}
+                <Icon className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            ))}
+          </div>
+        )}
         <Tags items={stack} label={t.info.stack} />
       </Card>
     );
@@ -140,7 +198,7 @@ const About = () => {
   );
 };
 
-const panels = { experience: Experience, about: About };
+const panels = { experience: Experience, projects: Projects, about: About };
 
 const Info = () => {
   const { t } = useLanguage();

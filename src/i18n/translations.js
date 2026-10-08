@@ -27,7 +27,7 @@ const translations = {
       title: "What I've been working on",
       tablist: "Sections",
       stack: "Tech stack",
-      tabs: { experience: "Experience", about: "About me" },
+      tabs: { experience: "Experience", projects: "Projects", about: "About me" },
       experiences: [
         {
           id: "cedetec",
@@ -87,6 +87,71 @@ const translations = {
             { text: "Developed key new features for the portal: a scissor finder, an adoption platform and a job portal." },
             { text: "Managed and maintained production platforms using PHP and jQuery, later migrating them to Magento." },
             { text: "Automated internal processes and synchronized the ERP (SAP) with the e-commerce to streamline the sales flow." },
+          ],
+        },
+      ],
+      projects: [
+        {
+          id: "lcn",
+          type: "Website & ordering platform",
+          badge: "In progress",
+          summary:
+            "Mobile-first website for a sandwich shop in Mataró (Barcelona), in Catalan and Spanish: menu with EU allergen info, opening hours, table reservations and online ordering for pickup or delivery.",
+          highlights: [
+            {
+              title: "Backend",
+              text: "REST API with Node.js/Express, PostgreSQL and Prisma: JWT auth with refresh tokens, argon2 hashing and Google sign-in, plus an admin panel to manage orders and the menu.",
+            },
+            {
+              title: "Security & anti-fraud",
+              text: "The server recalculates every order total, applies rate limiting, keeps a customer blacklist and an order status history; admin roles are checked against the database, not the token.",
+            },
+            {
+              title: "Quality",
+              text: "Vitest and React Testing Library on the frontend, Jest and Supertest on the backend, with a 90% coverage threshold.",
+            },
+            {
+              title: "Progressive rollout",
+              text: "Feature flags ship the static site first on Firebase Hosting and switch on accounts, orders and forms once the backend is deployed. Built with a team of specialized Claude Code agents.",
+            },
+          ],
+          links: { site: "Visit website", repo: "Repository" },
+        },
+        {
+          id: "aquaflow",
+          type: "IoT smart irrigation",
+          badge: "Demo",
+          summary:
+            "Smart irrigation system for farms: monitors soil moisture, temperature, pressure and flow sensors and a weather station in real time, and issues alerts and irrigation recommendations based on each crop, its growth stage and the weather forecast.",
+          highlights: [
+            {
+              title: "IoT",
+              text: "LoRaWAN data ingestion (The Things Network, MQTT) from Modbus sensors, an Ecowitt weather station and a Zeus SCADA datalogger, all through a single ingestion path shared with a soil simulator.",
+            },
+            {
+              title: "Irrigation engine",
+              text: "Soil-physics model (Van Genuchten) and a pressure-vs-flow check to detect leaks, bursts and blockages; irrigation is cancelled when rain is forecast (Open-Meteo).",
+            },
+            {
+              title: "Real time",
+              text: "Next.js dashboard with a plot map (Leaflet), sensor history and alerts pushed over WebSockets (Django Channels), Web Push notifications and an installable PWA with offline support, in Catalan, Spanish and English.",
+            },
+            {
+              title: "Infrastructure",
+              text: "Django REST, Celery, PostgreSQL and Redis on Docker Compose behind Nginx; GitHub Actions CI/CD builds the images and deploys to Hetzner Cloud.",
+            },
+          ],
+        },
+        {
+          id: "atd",
+          type: "AI & development workflow consulting",
+          badge: "Consulting",
+          summary:
+            "ATD runs the entire training system of the European Space Agency (ESA): it schedules the study content, calendars and virtual classes.",
+          highlights: [
+            { title: "AI adoption", text: "Advised the team on integrating AI tools into their day-to-day way of working." },
+            { title: "Git", text: "Version control with Git and collaborative workflows for the development team." },
+            { title: "Environments", text: "Setup and organization of the team's different development environments." },
           ],
         },
       ],
@@ -171,7 +236,7 @@ const translations = {
       title: "En qué he estado trabajando",
       tablist: "Secciones",
       stack: "Stack tecnológico",
-      tabs: { experience: "Experiencia", about: "Sobre mí" },
+      tabs: { experience: "Experiencia", projects: "Proyectos", about: "Sobre mí" },
       experiences: [
         {
           id: "cedetec",
@@ -231,6 +296,71 @@ const translations = {
             { text: "Desarrollé nuevas funcionalidades clave para el portal: un buscador de tijeras, una plataforma de adopción y un portal de empleo." },
             { text: "Gestioné y mantuve plataformas en producción con PHP y jQuery, migrándolas posteriormente a Magento." },
             { text: "Automaticé procesos internos y sincronicé el ERP (SAP) con el e-commerce para agilizar el flujo de ventas." },
+          ],
+        },
+      ],
+      projects: [
+        {
+          id: "lcn",
+          type: "Web y plataforma de pedidos",
+          badge: "En desarrollo",
+          summary:
+            "Web para una bocadillería de Mataró, en catalán y castellano y pensada para móvil: carta con alérgenos, horarios, reservas de mesa y pedidos online para recoger o a domicilio.",
+          highlights: [
+            {
+              title: "Backend",
+              text: "API REST con Node.js/Express, PostgreSQL y Prisma: autenticación JWT con refresh tokens, hash con argon2 e inicio de sesión con Google, además de un panel de administración de pedidos y carta.",
+            },
+            {
+              title: "Seguridad y antifraude",
+              text: "El servidor recalcula el importe de cada pedido, aplica rate limiting y mantiene una lista negra de clientes y un historial de estados; los roles de administrador se comprueban contra la base de datos, no contra el token.",
+            },
+            {
+              title: "Calidad",
+              text: "Vitest y React Testing Library en el frontend, Jest y Supertest en el backend, con un umbral de cobertura del 90%.",
+            },
+            {
+              title: "Despliegue progresivo",
+              text: "Feature flags que publican primero la web estática en Firebase Hosting y activan cuentas, pedidos y formularios cuando el backend está desplegado. Desarrollado con un equipo de agentes especializados de Claude Code.",
+            },
+          ],
+          links: { site: "Ver web", repo: "Repositorio" },
+        },
+        {
+          id: "aquaflow",
+          type: "Riego inteligente con IoT",
+          badge: "Demo",
+          summary:
+            "Sistema de riego inteligente para explotaciones agrícolas: monitoriza en tiempo real sensores de humedad del suelo, temperatura, presión y caudal y una estación meteorológica, y genera alertas y recomendaciones de riego según el cultivo, su fase y la previsión del tiempo.",
+          highlights: [
+            {
+              title: "IoT",
+              text: "Ingesta de datos LoRaWAN (The Things Network, MQTT) de sensores Modbus, una estación meteorológica Ecowitt y un datalogger SCADA Zeus, todo por una única vía de ingesta compartida con un simulador de suelo.",
+            },
+            {
+              title: "Motor de riego",
+              text: "Modelo de física del suelo (Van Genuchten) y control de presión frente a caudal para detectar fugas, roturas y obstrucciones; cancela el riego si se prevé lluvia (Open-Meteo).",
+            },
+            {
+              title: "Tiempo real",
+              text: "Dashboard en Next.js con mapa de parcelas (Leaflet), históricos y alertas enviados por WebSockets (Django Channels), notificaciones Web Push y PWA instalable con soporte offline, en catalán, castellano e inglés.",
+            },
+            {
+              title: "Infraestructura",
+              text: "Django REST, Celery, PostgreSQL y Redis en Docker Compose detrás de Nginx; CI/CD con GitHub Actions que construye las imágenes y despliega en Hetzner Cloud.",
+            },
+          ],
+        },
+        {
+          id: "atd",
+          type: "Consultoría en IA y flujo de desarrollo",
+          badge: "Consultoría",
+          summary:
+            "ATD gestiona todo el sistema de formación de la Agencia Espacial Europea (ESA): programa los contenidos de estudio, los calendarios y las clases virtuales.",
+          highlights: [
+            { title: "Adopción de IA", text: "Asesoré al equipo para integrar herramientas de IA en su forma de trabajar del día a día." },
+            { title: "Git", text: "Control de versiones con Git y flujos de trabajo colaborativos para el equipo de desarrollo." },
+            { title: "Entornos", text: "Configuración y organización de los distintos entornos de desarrollo del equipo." },
           ],
         },
       ],
