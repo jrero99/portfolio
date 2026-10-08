@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MoonIcon, SunIcon } from "./Icons";
 import { useLanguage } from "../i18n/LanguageContext";
 
@@ -9,32 +9,11 @@ const applyTheme = (theme) => {
   document.querySelector('meta[name="theme-color"]')?.setAttribute("content", THEME_COLORS[theme]);
 };
 
-const getSavedTheme = () => {
-  try {
-    return localStorage.getItem("theme");
-  } catch {
-    return null;
-  }
-};
-
 const ThemeToggle = () => {
   const { t } = useLanguage();
   const [theme, setTheme] = useState(() =>
     document.documentElement.classList.contains("dark") ? "dark" : "light"
   );
-
-  // Follow the system preference until the user picks a theme explicitly
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (e) => {
-      if (getSavedTheme()) return;
-      const next = e.matches ? "dark" : "light";
-      applyTheme(next);
-      setTheme(next);
-    };
-    media.addEventListener("change", handleChange);
-    return () => media.removeEventListener("change", handleChange);
-  }, []);
 
   const toggle = () => {
     const next = theme === "dark" ? "light" : "dark";

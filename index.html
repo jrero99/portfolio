@@ -29,8 +29,8 @@
     <script>
       (function () {
         try {
-          var saved = localStorage.getItem("theme");
-          var dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+          // Light by default; dark only when the visitor chose it with the toggle
+          var dark = localStorage.getItem("theme") === "dark";
           document.documentElement.classList.toggle("dark", dark);
           document.querySelector('meta[name="theme-color"]').content = dark ? "#1f1f1f" : "#fafafa";
         } catch (e) {}
