@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { ArrowUpRightIcon, GitHubIcon } from "./Icons";
 import { TechIcon, getTechIcon } from "./TechIcons";
 import { useLanguage } from "../i18n/LanguageContext";
 
@@ -12,18 +11,7 @@ const experienceMeta = {
   artero: { company: "Artero", stack: ["PHP", "jQuery", "SAP"] },
 };
 
-const projectMeta = {
-  squirdle: {
-    name: "Squirdle",
-    links: [
-      { id: "play", href: "https://jrero99.github.io/pokeguesserr/", Icon: ArrowUpRightIcon },
-      { id: "repo", href: "https://github.com/jrero99/pokeguesserr", Icon: GitHubIcon },
-    ],
-    stack: ["React", "Tailwind"],
-  },
-};
-
-const tabs = ["experience", "portfolio", "about"];
+const tabs = ["experience", "about"];
 
 const Card = ({ children }) => (
   <article className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.07] hover:ring-white/20 md:p-8">
@@ -97,34 +85,6 @@ const Experience = () => {
   });
 };
 
-const Portfolio = () => {
-  const { t } = useLanguage();
-  return t.info.projects.map(({ id, description, links: linkLabels }) => {
-    const { name, links, stack } = projectMeta[id];
-    return (
-      <Card key={id}>
-        <h3 className="font-display text-2xl font-semibold text-white">{name}</h3>
-        <p className="mt-4 text-slate-300">{description}</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          {links.map(({ id: linkId, href, Icon }) => (
-            <a
-              key={linkId}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-            >
-              {linkLabels[linkId]}
-              <Icon className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          ))}
-        </div>
-        <Tags items={stack} label={t.info.stack} />
-      </Card>
-    );
-  });
-};
-
 const Entries = ({ items }) => (
   <ul className="space-y-4">
     {items.map(({ title, school, period, description }) => (
@@ -180,7 +140,7 @@ const About = () => {
   );
 };
 
-const panels = { experience: Experience, portfolio: Portfolio, about: About };
+const panels = { experience: Experience, about: About };
 
 const Info = () => {
   const { t } = useLanguage();

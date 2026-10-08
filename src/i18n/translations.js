@@ -27,7 +27,7 @@ const translations = {
       title: "What I've been working on",
       tablist: "Sections",
       stack: "Tech stack",
-      tabs: { experience: "Experience", portfolio: "Portfolio", about: "About me" },
+      tabs: { experience: "Experience", about: "About me" },
       experiences: [
         {
           id: "cedetec",
@@ -88,14 +88,6 @@ const translations = {
             { text: "Managed and maintained production platforms using PHP and jQuery, later migrating them to Magento." },
             { text: "Automated internal processes and synchronized the ERP (SAP) with the e-commerce to streamline the sales flow." },
           ],
-        },
-      ],
-      projects: [
-        {
-          id: "squirdle",
-          description:
-            "Created a game based on Squirdle. The main objective is to find the Pokémon based on the clues the App gives you.",
-          links: { play: "Play the game", repo: "Repository" },
         },
       ],
       about: {
@@ -179,7 +171,7 @@ const translations = {
       title: "En qué he estado trabajando",
       tablist: "Secciones",
       stack: "Stack tecnológico",
-      tabs: { experience: "Experiencia", portfolio: "Portfolio", about: "Sobre mí" },
+      tabs: { experience: "Experiencia", about: "Sobre mí" },
       experiences: [
         {
           id: "cedetec",
@@ -240,14 +232,6 @@ const translations = {
             { text: "Gestioné y mantuve plataformas en producción con PHP y jQuery, migrándolas posteriormente a Magento." },
             { text: "Automaticé procesos internos y sincronicé el ERP (SAP) con el e-commerce para agilizar el flujo de ventas." },
           ],
-        },
-      ],
-      projects: [
-        {
-          id: "squirdle",
-          description:
-            "Creé un juego basado en Squirdle. El objetivo principal es adivinar el Pokémon a partir de las pistas que te da la app.",
-          links: { play: "Jugar", repo: "Repositorio" },
         },
       ],
       about: {

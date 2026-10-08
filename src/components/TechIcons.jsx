@@ -17,7 +17,6 @@ import {
   siSap,
   siSass,
   siStripe,
-  siTailwindcss,
   siTypescript,
   siVitest,
 } from "simple-icons";
@@ -44,7 +43,6 @@ const techIcons = {
   PHP: siPhp,
   jQuery: siJquery,
   SAP: siSap,
-  Tailwind: siTailwindcss,
 };
 
 export const getTechIcon = (name) => techIcons[name];
