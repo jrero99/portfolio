@@ -44,7 +44,7 @@ const Info = () => {
       </ul>
       <div className="flex flex-col py-10">
         {currentView == 0 && (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-blue-800">
+          <div className="max-w-sm rounded-sm overflow-hidden shadow-lg m-auto bg-blue-800">
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
                 Artero{" "}
@@ -110,7 +110,7 @@ const Info = () => {
           </div>
         )}
         {currentView == 1 && (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-blue-800">
+          <div className="max-w-sm rounded-sm overflow-hidden shadow-lg m-auto bg-blue-800">
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">Squirdle</div>
               <ul className="text-black text-base">
@@ -150,7 +150,7 @@ const Info = () => {
           </div>
         )}
         {currentView == 2 && (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto bg-blue-800">
+          <div className="max-w-sm rounded-sm overflow-hidden shadow-lg m-auto bg-blue-800">
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
                 Hi, I am Javier Redondo

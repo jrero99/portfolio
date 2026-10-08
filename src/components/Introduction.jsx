@@ -15,7 +15,7 @@ const Introduction = () => {
           I am ready to face new challenges
         </h1>
         <a href="#content">
-          <button className="text-sm font-bold tracking-widest uppercase text-white py-5 px-8 rounded-full focus:outline-none transition duration-150 ease-in-out mt-12 bg-zinc-900">
+          <button className="text-sm font-bold tracking-widest uppercase text-white py-5 px-8 rounded-full focus:outline-hidden cursor-pointer transition duration-150 ease-in-out mt-12 bg-zinc-900">
             explore works
           </button>
         </a>
