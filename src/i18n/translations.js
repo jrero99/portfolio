@@ -27,6 +27,8 @@ const translations = {
       title: "What I've been working on",
       tablist: "Sections",
       stack: "Tech stack",
+      showMore: "Show more",
+      showLess: "Show less",
       tabs: { experience: "Experience", projects: "Projects", about: "About me" },
       experiences: [
         {
@@ -120,7 +122,7 @@ const translations = {
         {
           id: "aquaflow",
           type: "IoT smart irrigation",
-          badge: "Demo",
+          badge: "In progress",
           summary:
             "Smart irrigation system for farms: monitors soil moisture, temperature, pressure and flow sensors and a weather station in real time, and issues alerts and irrigation recommendations based on each crop, its growth stage and the weather forecast.",
           highlights: [
@@ -236,6 +238,8 @@ const translations = {
       title: "En qué he estado trabajando",
       tablist: "Secciones",
       stack: "Stack tecnológico",
+      showMore: "Ver más",
+      showLess: "Ver menos",
       tabs: { experience: "Experiencia", projects: "Proyectos", about: "Sobre mí" },
       experiences: [
         {
@@ -329,7 +333,7 @@ const translations = {
         {
           id: "aquaflow",
           type: "Riego inteligente con IoT",
-          badge: "Demo",
+          badge: "En desarrollo",
           summary:
             "Sistema de riego inteligente para explotaciones agrícolas: monitoriza en tiempo real sensores de humedad del suelo, temperatura, presión y caudal y una estación meteorológica, y genera alertas y recomendaciones de riego según el cultivo, su fase y la previsión del tiempo.",
           highlights: [

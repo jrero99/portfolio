@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { ArrowUpRightIcon, GitHubIcon } from "./Icons";
 import { TechIcon, getTechIcon } from "./TechIcons";
 import { useLanguage } from "../i18n/LanguageContext";
+import Expandable from "./Expandable";
 
 const experienceMeta = {
   cedetec: {
@@ -16,7 +17,7 @@ const projectMeta = {
   lcn: {
     name: "La Casa Nostra",
     links: [
-      { id: "site", href: "https://lacasanostra.web.app", Icon: ArrowUpRightIcon },
+      { id: "site", href: "https://lacasanostragrup.es", Icon: ArrowUpRightIcon },
       { id: "repo", href: "https://github.com/jrero99/lcn", Icon: GitHubIcon },
     ],
     stack: ["React", "Vite", "Node.js", "Express", "PostgreSQL", "Prisma", "Zod", "Vitest", "Jest", "Firebase", "Claude"],
@@ -98,8 +99,10 @@ const Experience = () => {
           </div>
           <Period>{period}</Period>
         </div>
-        {summary && <p className="mt-5 text-slate-300">{summary}</p>}
-        <Highlights items={highlights} />
+        <Expandable>
+          {summary && <p className="mt-5 text-slate-300">{summary}</p>}
+          <Highlights items={highlights} />
+        </Expandable>
         <Tags items={stack} label={t.info.stack} />
       </Card>
     );
@@ -119,8 +122,10 @@ const Projects = () => {
           </div>
           <Period>{badge}</Period>
         </div>
-        <p className="mt-5 text-slate-300">{summary}</p>
-        <Highlights items={highlights} />
+        <Expandable>
+          <p className="mt-5 text-slate-300">{summary}</p>
+          <Highlights items={highlights} />
+        </Expandable>
         {links.length > 0 && (
           <div className="mt-6 flex flex-wrap gap-3">
             {links.map(({ id: linkId, href, Icon }) => (
@@ -164,36 +169,38 @@ const About = () => {
   return (
     <Card>
       <h3 className="font-display text-2xl font-semibold text-white">{title}</h3>
-      <p className="mt-4 leading-relaxed text-slate-300">{body}</p>
+      <Expandable>
+        <p className="mt-4 leading-relaxed text-slate-300">{body}</p>
 
-      <Block title={blocks.skills}>
-        <dl className="space-y-4">
-          {skills.map(({ area, items }) => (
-            <div key={area}>
-              <dt className="font-semibold text-white">{area}</dt>
-              <dd className="mt-1 text-sm leading-relaxed text-slate-300">{items}</dd>
-            </div>
-          ))}
-        </dl>
-      </Block>
+        <Block title={blocks.skills}>
+          <dl className="space-y-4">
+            {skills.map(({ area, items }) => (
+              <div key={area}>
+                <dt className="font-semibold text-white">{area}</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-slate-300">{items}</dd>
+              </div>
+            ))}
+          </dl>
+        </Block>
 
-      <Block title={blocks.education}>
-        <Entries items={education} />
-      </Block>
+        <Block title={blocks.education}>
+          <Entries items={education} />
+        </Block>
 
-      <Block title={blocks.certifications}>
-        <Entries items={certifications} />
-      </Block>
+        <Block title={blocks.certifications}>
+          <Entries items={certifications} />
+        </Block>
 
-      <Block title={blocks.languages}>
-        <ul className="flex flex-wrap gap-x-8 gap-y-2">
-          {languages.map(({ name, level }) => (
-            <li key={name} className="text-slate-300">
-              <span className="font-semibold text-white">{name}</span> · {level}
-            </li>
-          ))}
-        </ul>
-      </Block>
+        <Block title={blocks.languages}>
+          <ul className="flex flex-wrap gap-x-8 gap-y-2">
+            {languages.map(({ name, level }) => (
+              <li key={name} className="text-slate-300">
+                <span className="font-semibold text-white">{name}</span> · {level}
+              </li>
+            ))}
+          </ul>
+        </Block>
+      </Expandable>
     </Card>
   );
 };
