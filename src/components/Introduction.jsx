@@ -6,14 +6,16 @@ const Introduction = () => {
   return (
     <section id="top" className="flex min-h-svh items-center px-6 pt-16">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="inline-flex flex-wrap items-center justify-center gap-2.5 text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400 motion-safe:animate-fade-up">
-          <span className="relative flex size-2">
-            <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
-            <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+        <p className="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5 text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400 motion-safe:animate-fade-up">
+          <span className="inline-flex items-center gap-2.5">
+            <span className="relative flex size-2 shrink-0">
+              <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
+              <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+            </span>
+            <span>{t.intro.availability}</span>
           </span>
-          {t.intro.availability}
-          <span className="text-zinc-300 dark:text-zinc-700" aria-hidden="true">|</span>
-          Barcelona
+          <span className="hidden text-zinc-300 sm:inline dark:text-zinc-700" aria-hidden="true">|</span>
+          <span>Barcelona</span>
         </p>
 
         <h1 className="mt-8 font-display text-5xl font-bold tracking-tight text-balance text-zinc-900 dark:text-white motion-safe:animate-fade-up motion-safe:[animation-delay:120ms] sm:text-6xl md:text-7xl">

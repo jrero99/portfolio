@@ -24,3 +24,7 @@ yarn-error.log*
 
 # python cache (Claude skills scripts)
 __pycache__/
+
+# firebase
+.firebase/
+firebase-debug.log
