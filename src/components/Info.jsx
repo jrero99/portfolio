@@ -76,7 +76,7 @@ const Highlights = ({ items }) => (
   <ul className="mt-5 space-y-3 text-slate-300">
     {items.map(({ title, text }) => (
       <li key={text} className="flex gap-3">
-        <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-blue-400" aria-hidden="true" />
+        <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
         <span>
           {title && <strong className="font-semibold text-white">{title}: </strong>}
           {text}
@@ -134,7 +134,7 @@ const Projects = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 {linkLabels[linkId]}
                 <Icon className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -223,9 +223,9 @@ const Info = () => {
   const Panel = panels[active];
 
   return (
-    <section id="content" className="scroll-mt-16 bg-slate-950 px-6 dark:border-t dark:border-white/10 py-24 md:py-32">
+    <section id="content" className="scroll-mt-16 bg-slate-950 px-6 dark:border-t dark:border-white/10 dark:bg-night-deep py-24 md:py-32">
       <div className="mx-auto max-w-2xl">
-        <p className="text-center text-xs font-semibold tracking-widest text-blue-400 uppercase">{t.info.eyebrow}</p>
+        <p className="text-center text-xs font-semibold tracking-widest text-accent uppercase">{t.info.eyebrow}</p>
         <h2 className="mt-3 text-center font-display text-3xl font-bold tracking-tight text-balance text-white md:text-4xl">
           {t.info.title}
         </h2>
@@ -246,7 +246,7 @@ const Info = () => {
                   tabIndex={selected ? 0 : -1}
                   onClick={() => setActive(id)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
-                  className={`min-h-11 cursor-pointer rounded-full px-4 text-sm font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 sm:px-6 ${
+                  className={`min-h-11 cursor-pointer rounded-full px-3.5 text-sm font-semibold whitespace-nowrap transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-6 ${
                     selected ? "bg-white text-slate-950 shadow" : "text-slate-300 hover:text-white"
                   }`}
                 >

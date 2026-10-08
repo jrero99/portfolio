@@ -57,7 +57,7 @@ const Expandable = ({ className = "", children }) => {
           aria-expanded={expanded}
           aria-controls={id}
           onClick={toggle}
-          className="mt-3 inline-flex min-h-11 cursor-pointer items-center gap-1.5 rounded-full text-sm font-semibold text-slate-300 transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+          className="mt-3 inline-flex min-h-11 cursor-pointer items-center gap-1.5 rounded-full text-sm font-semibold text-slate-300 transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           {expanded ? t.info.showLess : t.info.showMore}
           <ChevronDownIcon

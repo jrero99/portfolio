@@ -9,7 +9,7 @@ const links = [
 
 const Header = () => {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-900/5 bg-zinc-50/75 backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/75">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-900/5 bg-zinc-50/75 backdrop-blur-md dark:border-white/10 dark:bg-night/75">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="font-display text-base font-bold tracking-tight whitespace-nowrap text-zinc-900 sm:text-lg dark:text-white">
           Javier Redondo<span className="text-accent">.</span>

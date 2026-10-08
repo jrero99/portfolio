@@ -6,7 +6,11 @@
     --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
     --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
-    --color-accent: #2563eb;
+    --color-accent: #3b82f6;
+
+    /* Dark mode surfaces, taken from VS Code's Dark Modern theme */
+    --color-night: #1f1f1f;
+    --color-night-deep: #181818;
 
     --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
     --animate-fade-in: fade-in 0.35s ease-out both;
@@ -51,5 +55,5 @@ html.dark {
 }
 
 body {
-    @apply bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+    @apply bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-night dark:text-zinc-100;
 }

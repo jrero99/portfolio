@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fafafa" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
           var saved = localStorage.getItem("theme");
           var dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
           document.documentElement.classList.toggle("dark", dark);
-          document.querySelector('meta[name="theme-color"]').content = dark ? "#09090b" : "#fafafa";
+          document.querySelector('meta[name="theme-color"]').content = dark ? "#1f1f1f" : "#fafafa";
         } catch (e) {}
       })();
     </script>

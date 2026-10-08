@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "./Icons";
 import { useLanguage } from "../i18n/LanguageContext";
 
-const THEME_COLORS = { light: "#fafafa", dark: "#09090b" };
+const THEME_COLORS = { light: "#fafafa", dark: "#1f1f1f" };
 
 const applyTheme = (theme) => {
   document.documentElement.classList.toggle("dark", theme === "dark");
