@@ -6,7 +6,7 @@ const Introduction = () => {
   return (
     <section id="top" className="flex min-h-svh items-center px-6 pt-16">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="inline-flex items-center gap-2.5 text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400 motion-safe:animate-fade-up">
+        <p className="inline-flex flex-wrap items-center justify-center gap-2.5 text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400 motion-safe:animate-fade-up">
           <span className="relative flex size-2">
             <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
             <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />

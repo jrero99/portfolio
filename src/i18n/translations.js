@@ -2,7 +2,7 @@
 const translations = {
   en: {
     meta: {
-      description: "Javier Redondo - Full-Stack Engineer portfolio. React, Node.js, Google Cloud and AI agents.",
+      description: "Javier Redondo - Full-Stack & AI Engineer portfolio. React, Node.js, Google Cloud, AI agents and MCP.",
     },
     header: {
       language: "Language",
@@ -12,11 +12,11 @@ const translations = {
       dark: "Dark mode",
     },
     intro: {
-      role: "Full-Stack Engineer",
+      role: "Full-Stack & AI Engineer",
       titleStart: "I am ready to face",
       titleHighlight: "new challenges",
       summary:
-        "Full-stack developer designing and shipping scalable architectures and SaaS platforms end-to-end, specialized in React, Node.js and Google Cloud.",
+        "Full-stack and AI engineer designing and shipping scalable architectures, SaaS platforms and AI agents end-to-end, specialized in React, Node.js and Google Cloud.",
       explore: "Explore works",
       contact: "Get in touch",
     },
@@ -94,7 +94,7 @@ const translations = {
       ],
       about: {
         title: "Hi, I am Javier Redondo",
-        body: "Full-stack developer with experience designing and deploying scalable architectures and SaaS platforms end-to-end. Specialized in the JavaScript/TypeScript ecosystem (React, Node.js) and cloud environments (GCP). Product-minded, able to lead complex integrations, process automation and data strategies for the business.",
+        body: "Full-stack and AI engineer with experience designing and deploying scalable architectures and SaaS platforms end-to-end. Specialized in the JavaScript/TypeScript ecosystem (React, Node.js) and cloud environments (GCP), and in building LLM-powered solutions: multi-agent systems, RAG and MCP servers. Product-minded, able to lead complex integrations, process automation and data strategies for the business.",
         blocks: { skills: "Skills", education: "Education", certifications: "Certifications", languages: "Languages" },
         skills: [
           { area: "Frontend", items: "React, JavaScript, Redux, TanStack Query, Context, HTML, CSS, Bootstrap" },
@@ -131,7 +131,7 @@ const translations = {
 
   es: {
     meta: {
-      description: "Javier Redondo - Portfolio de desarrollador Full-Stack. React, Node.js, Google Cloud y agentes de IA.",
+      description: "Javier Redondo - Portfolio de ingeniero Full-Stack y de IA. React, Node.js, Google Cloud, agentes de IA y MCP.",
     },
     header: {
       language: "Idioma",
@@ -141,11 +141,11 @@ const translations = {
       dark: "Modo oscuro",
     },
     intro: {
-      role: "Ingeniero Full-Stack",
+      role: "Ingeniero Full-Stack y de IA",
       titleStart: "Estoy listo para afrontar",
       titleHighlight: "nuevos retos",
       summary:
-        "Desarrollador full-stack que diseña y despliega arquitecturas escalables y plataformas SaaS de principio a fin, especializado en React, Node.js y Google Cloud.",
+        "Ingeniero full-stack y de IA que diseña y despliega arquitecturas escalables, plataformas SaaS y agentes de IA de principio a fin, especializado en React, Node.js y Google Cloud.",
       explore: "Ver trabajos",
       contact: "Contactar",
     },
@@ -223,7 +223,7 @@ const translations = {
       ],
       about: {
         title: "Hola, soy Javier Redondo",
-        body: "Desarrollador full-stack con experiencia en el diseño y despliegue de arquitecturas escalables y plataformas SaaS de principio a fin. Especializado en el ecosistema JavaScript/TypeScript (React, Node.js) y en entornos cloud (GCP). Con visión de producto, capaz de liderar integraciones complejas, automatización de procesos y estrategias de datos para el negocio.",
+        body: "Ingeniero full-stack y de IA con experiencia en el diseño y despliegue de arquitecturas escalables y plataformas SaaS de principio a fin. Especializado en el ecosistema JavaScript/TypeScript (React, Node.js), en entornos cloud (GCP) y en soluciones basadas en LLMs: sistemas multiagente, RAG y servidores MCP. Con visión de producto, capaz de liderar integraciones complejas, automatización de procesos y estrategias de datos para el negocio.",
         blocks: { skills: "Habilidades", education: "Formación", certifications: "Certificaciones", languages: "Idiomas" },
         skills: [
           { area: "Frontend", items: "React, JavaScript, Redux, TanStack Query, Context, HTML, CSS, Bootstrap" },
