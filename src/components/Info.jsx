@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import { ArrowUpRightIcon, GitHubIcon } from "./Icons";
+import { TechIcon, getTechIcon } from "./TechIcons";
 import { useLanguage } from "../i18n/LanguageContext";
 
 const experienceMeta = {
   cedetec: {
     company: "CedetecGroup",
-    stack: ["Node.js", "Express", "React", "Redux", "TanStack Query", "Stripe", "BigQuery", "Fivetran", "GCP", "Docker", "Cloud Build"],
+    stack: ["Node.js", "Express", "React", "Redux", "TanStack Query", "Stripe", "BigQuery", "Fivetran", "Claude", "MCP", "GCP", "Docker", "Cloud Build"],
   },
   optima: { company: "Optima Retail", stack: ["React", "Laravel", "MySQL", "Sass"] },
   artero: { company: "Artero", stack: ["PHP", "jQuery", "Magento", "SAP"] },
@@ -32,11 +33,31 @@ const Card = ({ children }) => (
 
 const Tags = ({ items, label }) => (
   <ul className="mt-6 flex flex-wrap gap-2" aria-label={label}>
-    {items.map((item) => (
-      <li key={item} className="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 ring-1 ring-white/10">
-        {item}
-      </li>
-    ))}
+    {items.map((item) => {
+      const icon = getTechIcon(item);
+      if (!icon) {
+        return (
+          <li key={item} className="flex h-10 items-center rounded-lg bg-white/5 px-3 text-xs font-medium text-slate-300 ring-1 ring-white/10">
+            {item}
+          </li>
+        );
+      }
+      return (
+        <li
+          key={item}
+          className="group relative flex size-10 items-center justify-center rounded-lg bg-white/5 text-slate-300 ring-1 ring-white/10 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+        >
+          <TechIcon icon={icon} className="size-5" />
+          <span className="sr-only">{item}</span>
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded-md bg-white px-2 py-1 text-xs font-medium whitespace-nowrap text-slate-950 opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+          >
+            {item}
+          </span>
+        </li>
+      );
+    })}
   </ul>
 );
 

@@ -99,7 +99,7 @@ const translations = {
         skills: [
           { area: "Frontend", items: "React, JavaScript, Redux, TanStack Query, Context, HTML, CSS, Bootstrap" },
           { area: "Backend & Architecture", items: "Node.js, Express, PHP, REST API design, multi-tenant architecture" },
-          { area: "AI & LLMs", items: "OpenAI API, LangChain, RAG, embeddings, vector databases (Pinecone), Hugging Face, MCP, LLMOps" },
+          { area: "AI & LLMs", items: "Claude, OpenAI API, LangChain, RAG, embeddings, vector databases (Pinecone), Hugging Face, MCP, LLMOps" },
           { area: "Cloud, Data & DevOps", items: "Google Cloud Platform (Cloud Run), Docker, CI/CD (Cloud Build), BigQuery, Fivetran (ETL)" },
           { area: "Tools & Methodologies", items: "Git, Agile, Stripe automation, LMS integrations (Moodle/Brightspace)" },
         ],
@@ -228,7 +228,7 @@ const translations = {
         skills: [
           { area: "Frontend", items: "React, JavaScript, Redux, TanStack Query, Context, HTML, CSS, Bootstrap" },
           { area: "Backend y Arquitectura", items: "Node.js, Express, PHP, diseño de APIs REST, arquitectura multi-tenant" },
-          { area: "IA y LLMs", items: "OpenAI API, LangChain, RAG, embeddings, bases de datos vectoriales (Pinecone), Hugging Face, MCP, LLMOps" },
+          { area: "IA y LLMs", items: "Claude, OpenAI API, LangChain, RAG, embeddings, bases de datos vectoriales (Pinecone), Hugging Face, MCP, LLMOps" },
           { area: "Cloud, Datos y DevOps", items: "Google Cloud Platform (Cloud Run), Docker, CI/CD (Cloud Build), BigQuery, Fivetran (ETL)" },
           { area: "Herramientas y Metodologías", items: "Git, Agile, automatización con Stripe, integraciones LMS (Moodle/Brightspace)" },
         ],
