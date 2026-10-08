@@ -18,7 +18,8 @@ const translations = {
       summary:
         "Full-stack and AI engineer designing and shipping scalable architectures, SaaS platforms and AI agents end-to-end, specialized in React, Node.js and Google Cloud.",
       explore: "Explore works",
-      contact: "Get in touch",
+      linkedin: "LinkedIn",
+      email: "Email me",
     },
     info: {
       eyebrow: "Get to know me",
@@ -147,7 +148,8 @@ const translations = {
       summary:
         "Ingeniero full-stack y de IA que diseña y despliega arquitecturas escalables, plataformas SaaS y agentes de IA de principio a fin, especializado en React, Node.js y Google Cloud.",
       explore: "Ver trabajos",
-      contact: "Contactar",
+      linkedin: "LinkedIn",
+      email: "Escríbeme",
     },
     info: {
       eyebrow: "Conóceme",

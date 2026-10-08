@@ -6,10 +6,10 @@ import { useLanguage } from "../i18n/LanguageContext";
 const experienceMeta = {
   cedetec: {
     company: "CedetecGroup",
-    stack: ["Node.js", "Express", "React", "Redux", "TanStack Query", "Stripe", "BigQuery", "Fivetran", "Claude", "MCP", "GCP", "Docker", "Cloud Build"],
+    stack: ["Node.js", "Express", "React", "Redux", "TanStack Query", "Stripe", "BigQuery", "Claude", "MCP", "GCP", "Docker"],
   },
   optima: { company: "Optima Retail", stack: ["React", "Laravel", "MySQL", "Sass"] },
-  artero: { company: "Artero", stack: ["PHP", "jQuery", "Magento", "SAP"] },
+  artero: { company: "Artero", stack: ["PHP", "jQuery", "SAP"] },
 };
 
 const projectMeta = {
@@ -19,7 +19,7 @@ const projectMeta = {
       { id: "play", href: "https://jrero99.github.io/pokeguesserr/", Icon: ArrowUpRightIcon },
       { id: "repo", href: "https://github.com/jrero99/pokeguesserr", Icon: GitHubIcon },
     ],
-    stack: ["React", "PokeAPIv2", "Tailwind"],
+    stack: ["React", "Tailwind"],
   },
 };
 
@@ -35,13 +35,7 @@ const Tags = ({ items, label }) => (
   <ul className="mt-6 flex flex-wrap gap-2" aria-label={label}>
     {items.map((item) => {
       const icon = getTechIcon(item);
-      if (!icon) {
-        return (
-          <li key={item} className="flex h-10 items-center rounded-lg bg-white/5 px-3 text-xs font-medium text-slate-300 ring-1 ring-white/10">
-            {item}
-          </li>
-        );
-      }
+      if (!icon) return null;
       return (
         <li
           key={item}

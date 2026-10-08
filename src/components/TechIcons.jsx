@@ -19,7 +19,7 @@ import {
   siTailwindcss,
 } from "simple-icons";
 
-// Stack names used in Info.jsx → Simple Icons. Names without an entry fall back to a text tag.
+// Stack names used in Info.jsx → Simple Icons. Names without an entry are not rendered.
 const techIcons = {
   "Node.js": siNodedotjs,
   Express: siExpress,

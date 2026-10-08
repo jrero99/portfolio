@@ -1,4 +1,4 @@
-import { ArrowDownIcon, LinkedInIcon } from "./Icons";
+import { ArrowDownIcon, LinkedInIcon, MailIcon } from "./Icons";
 import { useLanguage } from "../i18n/LanguageContext";
 
 const Introduction = () => {
@@ -40,7 +40,11 @@ const Introduction = () => {
             className="inline-flex min-h-12 items-center gap-2 rounded-full border border-zinc-900/10 bg-white px-7 text-sm font-semibold tracking-wide text-zinc-900 transition-colors duration-200 hover:border-zinc-900/20 hover:bg-zinc-100 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/20 dark:hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <LinkedInIcon className="size-4 text-[#0A66C2] dark:text-white" />
-            {t.intro.contact}
+            {t.intro.linkedin}
+          </a>
+          <a href="mailto:jredondorodriguez99@gmail.com" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-zinc-900/10 bg-white px-7 text-sm font-semibold tracking-wide text-zinc-900 transition-colors duration-200 hover:border-zinc-900/20 hover:bg-zinc-100 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/20 dark:hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            <MailIcon className="size-4" />
+            {t.intro.email}
           </a>
         </div>
       </div>
