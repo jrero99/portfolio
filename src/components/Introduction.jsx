@@ -11,7 +11,7 @@ const Introduction = () => {
             <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
             <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
           </span>
-          {t.intro.role}
+          {t.intro.availability}
           <span className="text-zinc-300 dark:text-zinc-700" aria-hidden="true">|</span>
           Barcelona
         </p>

@@ -4,6 +4,7 @@ import {
   siExpress,
   siGooglebigquery,
   siGooglecloud,
+  siJest,
   siJquery,
   siLaravel,
   siModelcontextprotocol,
@@ -17,17 +18,22 @@ import {
   siSass,
   siStripe,
   siTailwindcss,
+  siTypescript,
+  siVitest,
 } from "simple-icons";
 
 // Stack names used in Info.jsx → Simple Icons. Names without an entry are not rendered.
 const techIcons = {
   "Node.js": siNodedotjs,
   Express: siExpress,
+  TypeScript: siTypescript,
   React: siReact,
   Redux: siRedux,
   "TanStack Query": siReactquery,
   Stripe: siStripe,
   BigQuery: siGooglebigquery,
+  Jest: siJest,
+  Vitest: siVitest,
   Claude: siClaude,
   MCP: siModelcontextprotocol,
   GCP: siGooglecloud,

@@ -2,7 +2,8 @@
 const translations = {
   en: {
     meta: {
-      description: "Javier Redondo - Full-Stack & AI Engineer portfolio. React, Node.js, Google Cloud, AI agents and MCP.",
+      description:
+        "Javier Redondo - Full-Stack & AI Engineer portfolio. React, Node.js, Google Cloud, AI agents and MCP. Open to freelance projects and full-time roles.",
     },
     header: {
       language: "Language",
@@ -12,7 +13,7 @@ const translations = {
       dark: "Dark mode",
     },
     intro: {
-      role: "Full-Stack & AI Engineer",
+      availability: "Open to freelance & full-time roles",
       titleStart: "I am ready to face",
       titleHighlight: "new challenges",
       summary:
@@ -54,6 +55,10 @@ const translations = {
             {
               title: "MCP Server",
               text: "Currently building a Model Context Protocol (MCP) server on top of the platform so employees across departments can query the app's data directly from their AI assistants.",
+            },
+            {
+              title: "Testing",
+              text: "Set up the platform's testing system from scratch, covering both the Node.js REST API and the React frontend with Jest and Vitest.",
             },
             {
               title: "Cloud & DevOps",
@@ -125,6 +130,24 @@ const translations = {
         ],
       },
     },
+    availability: {
+      eyebrow: "Work with me",
+      title: "Two ways we can work together",
+      options: {
+        freelance: {
+          label: "Freelance projects",
+          text: "Web applications, SaaS platforms, integrations (Stripe, LMS, Google Workspace) and AI agents, from the first idea to production.",
+          cta: "Tell me about your project",
+          subject: "Freelance project",
+        },
+        fullTime: {
+          label: "Full-time position",
+          text: "Open to joining a team as a full-stack or AI engineer, bringing end-to-end ownership from architecture to deployment.",
+          cta: "Let's talk",
+          subject: "Job opportunity",
+        },
+      },
+    },
     footer: {
       rights: "All rights reserved",
     },
@@ -132,7 +155,7 @@ const translations = {
 
   es: {
     meta: {
-      description: "Javier Redondo - Portfolio de ingeniero Full-Stack y de IA. React, Node.js, Google Cloud, agentes de IA y MCP.",
+      description: "Javier Redondo - Portfolio de ingeniero Full-Stack y de IA. React, Node.js, Google Cloud, agentes de IA y MCP. Disponible para proyectos freelance y empleo fijo.",
     },
     header: {
       language: "Idioma",
@@ -142,7 +165,7 @@ const translations = {
       dark: "Modo oscuro",
     },
     intro: {
-      role: "Ingeniero Full-Stack y de IA",
+      availability: "Disponible para freelance y empleo fijo",
       titleStart: "Estoy listo para afrontar",
       titleHighlight: "nuevos retos",
       summary:
@@ -184,6 +207,10 @@ const translations = {
             {
               title: "Servidor MCP",
               text: "Actualmente estoy desarrollando un servidor Model Context Protocol (MCP) sobre la plataforma para que empleados de distintos departamentos puedan consultar los datos de la app directamente desde sus asistentes de IA.",
+            },
+            {
+              title: "Testing",
+              text: "Monté desde cero el sistema de testing de la plataforma, cubriendo tanto la API REST de Node.js como el frontend en React con Jest y Vitest.",
             },
             {
               title: "Cloud y DevOps",
@@ -253,6 +280,24 @@ const translations = {
           { name: "Catalán", level: "Nativo" },
           { name: "Inglés", level: "B1" },
         ],
+      },
+    },
+    availability: {
+      eyebrow: "Trabajemos juntos",
+      title: "Dos formas de colaborar",
+      options: {
+        freelance: {
+          label: "Proyectos freelance",
+          text: "Aplicaciones web, plataformas SaaS, integraciones (Stripe, LMS, Google Workspace) y agentes de IA, desde la primera idea hasta producción.",
+          cta: "Cuéntame tu proyecto",
+          subject: "Proyecto freelance",
+        },
+        fullTime: {
+          label: "Puesto fijo",
+          text: "Abierto a incorporarme a un equipo como ingeniero full-stack o de IA, encargándome de punta a punta, desde la arquitectura hasta el despliegue.",
+          cta: "Hablemos",
+          subject: "Oportunidad laboral",
+        },
       },
     },
     footer: {
