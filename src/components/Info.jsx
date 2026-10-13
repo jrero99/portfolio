@@ -7,10 +7,10 @@ import Expandable from "./Expandable";
 const experienceMeta = {
   cedetec: {
     company: "CedetecGroup",
-    stack: ["Node.js", "Express", "TypeScript", "React", "Redux", "TanStack Query", "Stripe", "BigQuery", "Jest", "Vitest", "Claude", "MCP", "GCP", "Docker"],
+    stack: ["Node.js", "Express", "TypeScript", "React", "Redux", "TanStack Query", "Stripe", "Redsys", "BigQuery", "Jest", "Vitest", "Claude", "MCP", "GCP", "Docker"],
   },
   optima: { company: "Optima Retail", stack: ["React", "TypeScript", "Laravel", "MySQL", "Sass"] },
-  artero: { company: "Artero", stack: ["PHP", "jQuery", "SAP"] },
+  artero: { company: "Artero", stack: ["PHP", "jQuery", "SAP", "Redsys"] },
 };
 
 const projectMeta = {

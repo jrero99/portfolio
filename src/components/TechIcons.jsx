@@ -30,6 +30,7 @@ import {
   siReact,
   siReactquery,
   siRedis,
+  siRedsys,
   siRedux,
   siSap,
   siSass,
@@ -83,6 +84,7 @@ const techIcons = {
   Cypress: siCypress,
   Neon: siNeon,
   pandas: siPandas,
+  Redsys: siRedsys,
 };
 
 export const getTechIcon = (name) => techIcons[name];

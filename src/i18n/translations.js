@@ -40,7 +40,7 @@ const translations = {
           highlights: [
             {
               title: "Architecture & Backend",
-              text: "Designed from scratch a multi-tenant REST API (Node.js/Express) with independent database pools. Implemented payment automation (Stripe webhooks/cron) and integrations with a dual LMS (Moodle/Brightspace) and Google Workspace.",
+              text: "Designed from scratch a multi-tenant REST API (Node.js/Express) with independent database pools. Implemented payment automation (Stripe webhooks/cron), the Redsys payment gateway and integrations with a dual LMS (Moodle/Brightspace) and Google Workspace.",
             },
             {
               title: "Data Engineering & BI",
@@ -89,6 +89,7 @@ const translations = {
             { text: "Developed key new features for the portal: a scissor finder, an adoption platform and a job portal." },
             { text: "Managed and maintained production platforms using PHP and jQuery, later migrating them to Magento." },
             { text: "Automated internal processes and synchronized the ERP (SAP) with the e-commerce to streamline the sales flow." },
+            { text: "Integrated the Redsys payment gateway into the e-commerce." },
           ],
         },
       ],
@@ -215,7 +216,7 @@ const translations = {
           { area: "Backend & Architecture", items: "Node.js, Express, PHP, REST API design, multi-tenant architecture" },
           { area: "AI & LLMs", items: "Claude, OpenAI API, LangChain, RAG, embeddings, vector databases (Pinecone), Hugging Face, MCP, LLMOps" },
           { area: "Cloud, Data & DevOps", items: "Google Cloud Platform (Cloud Run), Docker, CI/CD (Cloud Build), BigQuery, Fivetran (ETL)" },
-          { area: "Tools & Methodologies", items: "Git, Agile, Stripe automation, LMS integrations (Moodle/Brightspace)" },
+          { area: "Tools & Methodologies", items: "Git, Agile, payment gateways (Stripe, Redsys), LMS integrations (Moodle/Brightspace)" },
         ],
         education: [
           { title: "Bachelor's Degree in Computer Engineering", school: "Universitat Oberta de Catalunya", period: "2023 – 2026" },
@@ -244,7 +245,7 @@ const translations = {
       options: {
         freelance: {
           label: "Freelance projects",
-          text: "Web applications, SaaS platforms, integrations (Stripe, LMS, Google Workspace) and AI agents, from the first idea to production.",
+          text: "Web applications, SaaS platforms, integrations (Stripe, Redsys, LMS, Google Workspace) and AI agents, from the first idea to production.",
           cta: "Tell me about your project",
           subject: "Freelance project",
         },
@@ -300,7 +301,7 @@ const translations = {
           highlights: [
             {
               title: "Arquitectura y Backend",
-              text: "Diseñé desde cero una API REST multi-tenant (Node.js/Express) con pools de bases de datos independientes. Implementé la automatización de pagos (webhooks/cron de Stripe) e integraciones con un LMS dual (Moodle/Brightspace) y Google Workspace.",
+              text: "Diseñé desde cero una API REST multi-tenant (Node.js/Express) con pools de bases de datos independientes. Implementé la automatización de pagos (webhooks/cron de Stripe), la pasarela de pago Redsys e integraciones con un LMS dual (Moodle/Brightspace) y Google Workspace.",
             },
             {
               title: "Ingeniería de datos y BI",
@@ -349,6 +350,7 @@ const translations = {
             { text: "Desarrollé nuevas funcionalidades clave para el portal: un buscador de tijeras, una plataforma de adopción y un portal de empleo." },
             { text: "Gestioné y mantuve plataformas en producción con PHP y jQuery, migrándolas posteriormente a Magento." },
             { text: "Automaticé procesos internos y sincronicé el ERP (SAP) con el e-commerce para agilizar el flujo de ventas." },
+            { text: "Integré la pasarela de pago Redsys en el e-commerce." },
           ],
         },
       ],
@@ -475,7 +477,7 @@ const translations = {
           { area: "Backend y Arquitectura", items: "Node.js, Express, PHP, diseño de APIs REST, arquitectura multi-tenant" },
           { area: "IA y LLMs", items: "Claude, OpenAI API, LangChain, RAG, embeddings, bases de datos vectoriales (Pinecone), Hugging Face, MCP, LLMOps" },
           { area: "Cloud, Datos y DevOps", items: "Google Cloud Platform (Cloud Run), Docker, CI/CD (Cloud Build), BigQuery, Fivetran (ETL)" },
-          { area: "Herramientas y Metodologías", items: "Git, Agile, automatización con Stripe, integraciones LMS (Moodle/Brightspace)" },
+          { area: "Herramientas y Metodologías", items: "Git, Agile, pasarelas de pago (Stripe, Redsys), integraciones LMS (Moodle/Brightspace)" },
         ],
         education: [
           { title: "Grado en Ingeniería Informática", school: "Universitat Oberta de Catalunya", period: "2023 – 2026" },
@@ -504,7 +506,7 @@ const translations = {
       options: {
         freelance: {
           label: "Proyectos freelance",
-          text: "Aplicaciones web, plataformas SaaS, integraciones (Stripe, LMS, Google Workspace) y agentes de IA, desde la primera idea hasta producción.",
+          text: "Aplicaciones web, plataformas SaaS, integraciones (Stripe, Redsys, LMS, Google Workspace) y agentes de IA, desde la primera idea hasta producción.",
           cta: "Cuéntame tu proyecto",
           subject: "Proyecto freelance",
         },
